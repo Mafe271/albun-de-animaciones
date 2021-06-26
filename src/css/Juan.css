@@ -1,3 +1,5 @@
+/*Estilos aplicados a toda la pagina*/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@ html, body {
     width: 100%;
     flex-direction: column;
 }
+/*Estilos contenedor padre*/
 
 .container{
     position: relative;
@@ -19,6 +22,8 @@ html, body {
     display: flex;
     width: 100%;
 }
+/*Estilos nombre del  titulo*/
+
 .tituloJuan{
     position: absolute;
     font-size: 40px;
@@ -28,6 +33,7 @@ html, body {
     animation-name: slideinTitle;
     animation-duration: 3s;
 }
+/*Estilos container titulo*/
 
 .cabecera{
     position: relative;
@@ -65,10 +71,10 @@ html, body {
     opacity: 0;
 }
 
-.cubo2{
+/*.cubo2{
     animation-name:;
     background-color: chartreuse;
-}
+}*/
 
 .cubo2:hover{
     background-color: burlywood;
@@ -99,11 +105,119 @@ animation-name: temblar;
 animation-duration: 3s;
 }
 
+/*Estilos del menu*/
+
+.Menu{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+.Menu ul{
+    display: grid;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 150px;
+}
+
+.Menu ul li{
+    background: #A770EF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: auto;
+    padding: 10px 15px;
+    margin: 10px;
+    height: 90%;
+    border-radius: 20px;
+    border: 0px solid ;
+    transition: border 2s, background-color 2s, box-shadow 3s;
+}
+
+.Menu ul li:hover{
+    background-color: rgh 194, 194, 245;
+    border: 0px  solid ;
+    box-shadow: 4px 4px 14px 8px rgba(0, 0, 0.41); 
+    }
 
 
+/* Section de giros*/
 
+#giros{
+    display: flex;
+    width: 99%;
+    height: min-content;
+    justify-content: space-around;
+    border: 1px solid blueviolet;
+    
+}
+.card{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: skyblue;
+    margin: 20px;
+}
+.transiciones, .giros{
+    display: grid;
+    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    border: 1px solid sandybrown;
+}
+.card2{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background: #A770EF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 20px;
+    transition: transform 3s;
+}
+@media screen and (min-width:421px) and (max-width:800px){
+    .transiciones, .giros{
+        grid-template-columns: 1fr 1fr;
+    }
+    .Menu ul{
+       grid-template-columns: 1fr 1fr;
+       column-gap: 50px;
+       row-gap:55px;
+ }
+}
+@media screen and (min-width:375px) and (max-width:420px){
+    .transiciones, .giros{
+        grid-template-columns: 1fr;
+    }
 
-/* animacion */
+    .Menu ul{
+       grid-template-columns: 1fr 1fr;
+       column-gap: 50px;
+       row-gap:55px;
+ }
+}
+
+/* Animacion */
 @keyframes slidein {
     from {
     margin-left: 100%;
@@ -145,3 +259,145 @@ animation-duration: 3s;
         transform: rotate(0deg);
     }
 }
+
+@keyframes llegadaDerecha {
+    0%{ 
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    60%{
+        opacity: 0,8;
+        transform: translateX(-80px);
+    }
+
+    80%{
+        opacity: 0,9;
+        transform: translateX(15px); 
+     }
+     100%{
+        opacity: 1;
+        transform: translateX(0); 
+     }
+}
+@keyframes llegadaIzquierda{
+    0%{ 
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    60%{
+        opacity: 0,8;
+        transform: translateX(-80px);
+    }
+
+    80%{
+        opacity: 0,9;
+        transform: translateX(15px); 
+     }
+     100%{
+        opacity: 1;
+        transform: translateX(0); 
+     }
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+@keyframes llegadaArriba{
+    0%{ 
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    60%{
+        opacity: 0,8;
+        transform: translateY(-80px);
+    }
+
+    80%{
+        opacity: 0,9;
+        transform: translateY(15px); 
+     }
+     100%{
+        opacity: 1;
+        transform: translateY(0); 
+     }
+}
+
+@keyframes llegadaAbajo{
+    0%{ 
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    60%{
+        opacity: 0,8;
+        transform: translateY(80px);
+    }
+
+    80%{
+        opacity: 0,9;
+        transform: translateY(15px); 
+     }
+     100%{
+        opacity: 1;
+        transform: translateY(0); 
+     }
+}
+
+/*Giros*/
+
+
+ .Giro_completo:hover{
+    transform: rotate(360deg);
+ }
+
+ .Giro_completo_left:hover{
+    transform: rotate(-360deg);
+ }
+
+.Medio_Giro:hover{
+    transform: rotate(-180deg);
+ }
+.Medio_Giro_Right:hover{
+    transform: rotate(-90deg);
+ }
+ .Medio_Giro_Left:hover{
+    transform: rotate(90deg);
+ }
+ .rotated{
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+/*Transiciones*/
+
+.slideRigth{
+    animation-name: llegadaDerecha;
+    animation-duration: 3s;
+ }
+ .slideLeft{
+    animation-name: llegadaIzquierda;
+    animation-duration: 3s;
+
+ }
+ .slideUp{
+    animation-name: llegadaArriba;
+    animation-duration: 3s;
+ }
+ .slideDown{
+    animation-name: llegadaAbajo;
+    animation-duration: 3s;
+ }
